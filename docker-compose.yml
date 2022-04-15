@@ -7,4 +7,5 @@ services:
       dockerfile: Dockerfile-dev
     volumes:
       - ./src:/app/src
-
+    ports:
+      - 8080:8080

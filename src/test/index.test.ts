@@ -5,5 +5,4 @@ describe('mock test', () => {
     expect(got).toEqual(want);
   });
 });
-
 export {};

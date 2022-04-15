@@ -1,3 +1,3 @@
-console.log('Hello World');
+import startServer from './server';
 
-export {};
+startServer();
