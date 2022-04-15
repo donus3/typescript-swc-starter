@@ -1,0 +1,39 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "swc src -d dist",
+    "build-dev": "yarn build && NODE_ENV=development node --inspect dist/index.js",
+    "dev": "nodemon --ext ts --exec \"yarn build-dev\"",
+    "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
+    "start": "yarn build && NODE_ENV=production node dist/index.js",
+    "test": "jest --detectOpenHandles --forceExit --coverage --verbose --passWithNoTests",
+    "test:onlyChanged": "jest --onlyChanged",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.165",
+    "@swc/jest": "^0.2.20",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^16.0.24",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "chokidar": "^3.5.3",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {}
+}
